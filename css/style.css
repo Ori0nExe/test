@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body{
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 300px);
+    grid-template-areas: 
+        "l l l i1 i1 i1 i1 i1 i2 i2 i2 i2"
+        "i3 i3 i3 i3 i3 i3 i3 i4 i4 i4 i4 i4"
+        "i3 i3 i3 i3 i3 i3 i3 i5 i5 i5 i5 i5";
+    grid-gap: 30px;
+    padding: 20px;
+}
+.gallery_logo{
+    grid-area: l;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery_img1{
+    grid-area: i1;
+    background-image: url(../img/1.png);
+    background-size: cover;
+    background-position: center;
+}
+.gallery_img2{
+    grid-area: i2;
+    background-image: url(../img/2.png);
+    background-size: cover;
+    background-position: center;
+}
+.gallery_img3{
+    grid-area: i3;
+    background-image: url(../img/3.png);
+    background-size: cover;
+    background-position: center;
+}
+.gallery_img4{
+    grid-area: i4;
+    background-image: url(../img/4.png);
+    background-size: cover;
+    background-position: center;
+}
+.gallery_img5{
+    grid-area: i5;
+    background-image: url(../img/5.png);
+    background-size: cover;
+    background-position: center;
+}
+@media (max-width: 765px){
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 300px);
+        grid-template-areas: 
+            "l l"
+            "i1 i2"
+            "i3 i3"
+            "i3 i3"
+            "i4 i5";
+    }
+}
